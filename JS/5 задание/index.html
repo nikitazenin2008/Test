@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сумма первой и последней цифры</title>
+</head>
+<body>
+
+<input type="number" id="inputNumber" placeholder="Введите число">
+<button onclick="calculateSum()">Посчитать сумму</button>
+<p id="result"></p>
+
+<script>
+    function sumFirstAndLastDigit(num) {
+        const strNum = num.toString();
+        const firstDigit = parseInt(strNum[0]);
+        const lastDigit = parseInt(strNum[strNum.length - 1]);
+        return firstDigit + lastDigit;
+    }
+
+    function calculateSum() {
+        const input = document.getElementById('inputNumber').value;
+        const sum = sumFirstAndLastDigit(input);
+        document.getElementById('result').innerText = `Сумма: ${sum}`;
+    }
+</script>
+
+</body>
+</html>

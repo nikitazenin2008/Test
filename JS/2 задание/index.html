@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка четности числа</title>
+</head>
+<body>
+    <h1>Проверка четности числа</h1>
+    <input type="number" id="numberInput" placeholder="Введите число">
+    <button onclick="checkEvenOdd()">Проверить</button>
+    <p id="result"></p>
+
+    <script>
+        function checkEvenOdd() {
+            const num = parseInt(document.getElementById('numberInput').value);
+            const resultElement = document.getElementById('result');
+            
+            if (num % 2 === 0) {
+                resultElement.textContent = 'True (четное)';
+            } else {
+                resultElement.textContent = 'False (нечетное)';
+            }
+        }
+    </script>
+</body>
+</html>

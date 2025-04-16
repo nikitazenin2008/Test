@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка числа</title>
+</head>
+<body>
+    <h1>Проверка числа</h1>
+    <input type="number" id="numberInput" placeholder="Введите число">
+    <button onclick="checkNumber()">Проверить</button>
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            const num = parseInt(document.getElementById('numberInput').value);
+            const resultElement = document.getElementById('result');
+            
+            if (num > 18) {
+                resultElement.textContent = 'True';
+            } else {
+                resultElement.textContent = 'False';
+            }
+        }
+    </script>
+</body>
+</html>

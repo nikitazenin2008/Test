@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка палиндрома</title>
+</head>
+<body>
+
+<input type="text" id="inputString" placeholder="Введите строку">
+<button onclick="checkPalindrome()">Проверить</button>
+<p id="result"></p>
+
+<script>
+    function isPalindrome(s) {
+        s = s.replace(/\s/g, '').toLowerCase();
+        return s === s.split('').reverse().join('');
+    }
+
+    function checkPalindrome() {
+        const input = document.getElementById('inputString').value;
+        const result = isPalindrome(input);
+        document.getElementById('result').innerText = result ? 'Это палиндром.' : 'Это не палиндром.';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>не работает.сделал все что знал</title>
+</head>
+<body>
+
+<button onclick="fetchSchedule()">Получить расписание</button>
+
+<script>
+    async function fetchSchedule() {
+        try {
+            const response = await fetch('https://api.rcenext.ru/schedule');
+            if (!response.ok) {
+                throw new Error('Сетевой ответ был не успешным');
+            }
+            const data = await response.json();
+
+            if (data && data.groups && data.groups.length > 0) {
+                const firstGroupSchedule = data.groups[0].schedule;
+                console.log(`Расписание группы: ${data.groups[0].name}`);
+                console.log(firstGroupSchedule);
+            } else {
+                console.log('Нет доступных групп или расписания.');
+            }
+        } catch (error) {
+            console.error('Произошла ошибка при получении расписания:', error);
+        }
+    }
+</script>
+
+</body>
+</html>

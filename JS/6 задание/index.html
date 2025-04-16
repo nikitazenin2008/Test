@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сумма чего то там</title>
+</head>
+<body>
+
+<input type="text" id="inputArray" placeholder="через запятую надо вводить!!!">
+<button onclick="calculateSum()">Посчитать сумму</button>
+<p id="result"></p>
+
+<script>
+    function sumArrayElements(arr) {
+        return arr.reduce((sum, num) => {
+            if (num > 0 && num < 10) {
+                return sum + num;
+            }
+            return sum;
+        }, 0);
+    }
+
+    function calculateSum() {
+        const input = document.getElementById('inputArray').value;
+        const array = input.split(',').map(Number); 
+        const sum = sumArrayElements(array);
+        document.getElementById('result').innerText = `Сумма элементов больше 0 и меньше 10: ${sum}`;
+    }
+</script>
+
+</body>
+</html>

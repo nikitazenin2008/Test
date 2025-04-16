@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подсчет гласных</title>
+</head>
+<body>
+
+<input type="text" id="inputString" placeholder="Введите текст">
+<button onclick="countVowels()">Подсчитать гласные</button>
+<p id="result"></p>
+
+<script>
+    function countVowelsInString(str) {
+        const vowels = ['а', 'я', 'о', 'ё', 'у', 'ю', 'ы', 'и', 'э', 'е'];
+        let count = 0;
+
+        for (let char of str.toLowerCase()) { 
+            if (vowels.includes(char)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    function countVowels() {
+        const input = document.getElementById('inputString').value;
+        const vowelCount = countVowelsInString(input);
+        document.getElementById('result').innerText = `Количество гласных: ${vowelCount}`;
+    }
+</script>
+
+</body>
+</html>
